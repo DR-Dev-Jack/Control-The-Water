@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: 0;
     font-family: Chalkduster, fantasy;
+    cursor: url("images/SuperCurser.png"), auto;
 }
 
 body{
@@ -16,11 +17,6 @@ body{
 section{
     position: relative;
     width: 100%;
-
-}
-
-section .text{
-    background: rgb(76, 132, 247);
 }
 
 section .waves{
@@ -34,7 +30,7 @@ section .waves .wave{
     bottom: 0;
     width: 100vw;
     height: 12vh;
-    background: url(wave.png);
+    background: url(images/wave.png);
     background-size: 1000px 12vh;
 
 }
@@ -114,6 +110,33 @@ h2#tittle{
     width: 45vw;
     min-width: 400px;
     height: auto;
-    bottom: 0;
+    bottom: 2vh;
     pointer-events: none;
+}
+
+.topnav{
+    background-color: rgb(76, 132, 247);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin-top: -1px;
+}
+
+.topnav a{
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 3vw 4vw;
+    text-decoration: none;
+    font-size: 4vw;
+}
+
+.topnav a:hover{
+    background-color: rgb(60, 120, 255);
+}
+
+section .text{
+    position: relative;
+    background: rgb(76, 132, 247);
 }
