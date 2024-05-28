@@ -134,6 +134,8 @@ h2#tittle{
 
 .topnav a:hover{
     background-color: rgb(60, 120, 255);
+    padding: 3vw 4vw;
+    border-radius: 10%;
 }
 
 section .text{
