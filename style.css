@@ -142,3 +142,7 @@ section .text{
     position: relative;
     background: rgb(76, 132, 247);
 }
+
+.litle-space {
+    height: 150px;
+}
