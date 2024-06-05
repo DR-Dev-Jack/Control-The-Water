@@ -34,6 +34,13 @@ async function requestWeather(position) {
     const max_wind = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxwind_kph"];
     const min_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["mintemp_c"];
     const rain = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["totalprecip_mm"];
+
+    console.log(rain_chance)
+    document.getElementById("textRainChance").innerHTML = rain_chance.toString();
+    document.getElementById("textRainFall").innerHTML = rain.toString();
+    document.getElementById("textWindSpeed").innerHTML = max_wind.toString();
+    document.getElementById("textMinTemp").innerHTML = min_temp.toString();
+    document.getElementById("textMaxTemp").innerHTML = max_temp.toString();
 }
 
 getLocation();
