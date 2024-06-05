@@ -151,3 +151,8 @@ section .text{
 .litle-space {
     height: 150px;
 }
+
+.dynamisch {
+    font-weight: 900;
+    color: black;
+}
