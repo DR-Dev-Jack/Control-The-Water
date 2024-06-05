@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: 0;
-    font-family: Chalkduster, fantasy;
+    font-family: Chalkduster, Georgia, 'Times New Roman', Times, serif;
     cursor: url("images/SuperCurser.png"), auto;
 }
 
@@ -108,7 +108,7 @@ h2#tittle{
     left: 50%;
     transform: translateX(-50%);
     width: 45vw;
-    min-width: 400px;
+    min-width: 380px;
     height: auto;
     bottom: 2vh;
     pointer-events: none;
@@ -119,7 +119,7 @@ h2#tittle{
     overflow: hidden;
     position: sticky;
     top: 0;
-    width: 100%;
+    width: 100vw;
     margin-top: -1px;
 }
 
@@ -134,13 +134,18 @@ h2#tittle{
 
 .topnav a:hover{
     background-color: rgb(60, 120, 255);
-    padding: 3vw 4vw;
+    padding: 2vw 4vw;
     border-radius: 10%;
 }
 
 section .text{
     position: relative;
     background: rgb(76, 132, 247);
+    color: #fff;
+    font-size: 2.5vh;
+    width: 92vw;
+    height: auto;
+    padding: 1vh 4vw;
 }
 
 .litle-space {
