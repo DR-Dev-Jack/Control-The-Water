@@ -2,10 +2,8 @@ var currentLatitude;
 var currentLongitude;
 
 async function getData(api_url) {
-    console.log("step 2/start data fetch");
     const response = await fetch(api_url);
     const data = await response.json();
-    console.log("step 3/data:", data);
     return new Promise(resolve => setTimeout(() => resolve(data), 100));
 }
 
@@ -26,13 +24,16 @@ async function requestWeather(position) {
     const weatherKey = "a5e5b58ca02f405c915110838240406";
     const weatherRest = "&days=1&aqi=no&alerts=no";
     const weatherRequest = baseUrlWeather + "?key=" + weatherKey + "&q=" + latitude + "," + longitude + weatherRest;
-    console.log("step 1/try url:", weatherRequest);
 
     const jsonWeatherReply = await getData(weatherRequest);
     
-    console.log("step 4/json reply:", jsonWeatherReply);
-    const avg_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["avgtemp_c"];
-    console.log("step 5/temperature:", avg_temp);
+    const avgHumidity = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["avghumidity"];
+    const avgTemp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["avgtemp_c"];
+    const rain_chance = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["daily_chance_of_rain"];
+    const max_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxtemp_c"];
+    const max_wind = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxwind_kph"];
+    const min_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["mintemp_c"];
+    const rain = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["totalprecip_mm"];
 }
 
 getLocation();
