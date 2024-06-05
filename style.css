@@ -115,7 +115,7 @@ h2#tittle{
 }
 
 .topnav{
-    background-color: rgb(76, 132, 247);
+    background-color: #3586ff;
     overflow: hidden;
     position: sticky;
     top: 0;
@@ -140,7 +140,7 @@ h2#tittle{
 
 section .text{
     position: relative;
-    background: rgb(76, 132, 247);
+    background: rgb(53, 134, 255);
     color: #fff;
     font-size: 2.5vh;
     width: 92vw;
