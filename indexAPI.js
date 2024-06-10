@@ -35,26 +35,25 @@ async function extractCoords(position) { // gebruikt de geolocation en getData f
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-
     const baseUrlWeather = "https://api.weatherapi.com/v1/forecast.json";
     const weatherKey = "a5e5b58ca02f405c915110838240406";
     const weatherRest = "&days=1&aqi=no&alerts=no";
     const weatherRequest = baseUrlWeather + "?key=" + weatherKey + "&q=" + latitude + "," + longitude + weatherRest;
 
     jsonWeatherReply = await getData(weatherRequest);
+    console.log("returned api:", jsonWeatherReply)
     
-    setCookie("jsonWeatherReply", jsonWeatherReply) // hier nog een datum
+    setCookie("jsonWeatherReply", JSON.stringify(jsonWeatherReply))
     WriteWeatherVariablesToText(jsonWeatherReply)    
 }
 
 function setCookie(cname, cvalue) { // maakt een cookie aan voor een dag
     const now = new Date();
     const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    console.log(endOfDay)
     const expires = "expires=" + endOfDay.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    console.log("created cookie:", cname + "=" + cvalue + ";" + expires + ";path=/")
 }
-
 
 function getCookie(cname) { // zoekt mijn cookies
     let name = cname + "=";
@@ -72,14 +71,14 @@ function getCookie(cname) { // zoekt mijn cookies
     return "";
 }
 
-
 jsonWeatherReply = getCookie("jsonWeatherReply")
 if (jsonWeatherReply != "") {
     console.log("uses cookie");
     console.log("returned cookie:", jsonWeatherReply)
-    WriteWeatherVariablesToText(jsonWeatherReply);
+    WriteWeatherVariablesToText(JSON.parse(jsonWeatherReply));
 } else {
+    console.log("tried cookie and got:", jsonWeatherReply)
+    console.log()
     console.log("uses api");
     getLocation();
-    console.log("returned api:", jsonWeatherReply)
 }
