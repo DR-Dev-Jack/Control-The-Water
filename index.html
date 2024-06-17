@@ -8,6 +8,8 @@
         <link id="favicon" rel="icon" href="images/logo.png" sizes="16x16" /> 
         <link rel="stylesheet" href="./style.css">
         <script src="indexAPI.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="detect-device.js"></script>
     </head>
     
     <body>
@@ -32,10 +34,11 @@
             </div>
         </section>
         <div class="little-space"></div>
+        <div id="windmill-container"></div>
         <section>
             <div class="text">
                 <p>Hallo! Vandaag belooft het een interessante dag te worden wat betreft het weer. </p>
-                <p>Ik ben het <test class="dynamisch" id="textRainChance">...</test> procent zeker dat het vandaag weer gaat regenen 😮‍💨.</p> 
+                <p>Ik ben <test class="dynamisch" id="textRainChance">...</test> procent zeker dat er kans is op regen 😮‍💨.</p> 
                 <p>Wist je dat de grootste paraplu ter wereld maar liefst 17,06 meter in diameter was?</p>
                 <p>Dat zou je zeker droog houden!</p>
                 <p>Wat betreft neerslag, verwachten we vandaag ongeveer <test class="dynamisch" id="textRainFall">...</test> mm regen.</p>
@@ -48,8 +51,8 @@
                 <p>Een typisch voorbeeld van het wisselvallige weer waar Nederland om bekend staat.</p>
                 <p>Leuk feitje: de hoogste temperatuur ooit gemeten op aarde was 56,7°C in Furnace Creek Ranch,</p>
                 <p>Californië, op 10 juli 1913. Gelukkig hoeven wij ons daar geen zorgen over te maken!</p>
-                
             </div>
+            <div id="windmill-container"></div>
         </section>
     </body>
 </html>
