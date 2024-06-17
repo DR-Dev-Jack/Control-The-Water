@@ -84,8 +84,6 @@ window.onload = function() {
         getLocation();
     }
 }
-<<<<<<< Updated upstream
-=======
 
 function WriteWeatherVariablesToText(jsonWeatherReply) { // maakt json variables en schrijft ze naar de html
     const avgHumidity = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["avghumidity"];
@@ -156,4 +154,3 @@ if (jsonWeatherReply != "") {
     console.log("returned api:", jsonWeatherReply)
 }
 
->>>>>>> Stashed changes
