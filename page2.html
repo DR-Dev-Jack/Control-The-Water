@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Control the water</title>
+        <link id="favicon" rel="icon" href="images/logo.png" sizes="16x16" /> 
+        <link rel="stylesheet" href="./page2.css">
+        <script src="waterUsage.js"></script>
+    </head>
+    
+    <body>
+
+        <section>
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="topnav">
+                <a href="index.html">Home</a>
+                <a href="page2.html">Water usage</a>
+                <a href="">Contact us</a>
+            </div>
+        </section>
+        <section id="waterUsageForm">
+            <h1>Water Usage Calculator</h1>
+                <label for="showerDuration">Shower Duration:</label>
+                <select id="showerDuration" name="showerDuration">
+                    <option value="less_than_5">Less than 5 minutes</option>
+                    <option value="5_to_10">5 to 10 minutes</option>
+                    <option value="10_to_15">10 to 15 minutes</option>
+                    <option value="more_than_15">More than 15 minutes</option>
+                </select><br>
+
+                <label for="showerFrequency">Shower Frequency:</label>
+                <select id="showerFrequency" name="showerFrequency">
+                    <option value="1_to_2">1-2 times per week</option>
+                    <option value="3_to_4">3-4 times per week</option>
+                    <option value="5_to_6">5-6 times per week</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="toiletFlushes">Toilet Flushes per day:</label>
+                <select id="toiletFlushes" name="toiletFlushes">
+                    <option value="1_to_2">1-2 times</option>
+                    <option value="3_to_4">3-4 times</option>
+                    <option value="5_or_more">5 or more times</option>
+                </select><br>
+
+                <label for="dishwasherUsage">Dishwasher Usage:</label>
+                <select id="dishwasherUsage" name="dishwasherUsage">
+                    <option value="rarely">Rarely</option>
+                    <option value="occasionally">Occasionally</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="laundryFrequency">Laundry Frequency:</label>
+                <select id="laundryFrequency" name="laundryFrequency">
+                    <option value="rarely">Rarely</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="2_to_3_times">2-3 times per week</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="outdoorWatering">Outdoor Watering:</label>
+                <select id="outdoorWatering" name="outdoorWatering">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <label for="drinkingWater">Glasses of Water per day:</label>
+                <select id="drinkingWater" name="drinkingWater">
+                    <option value="less_than_4">Less than 4 glasses</option>
+                    <option value="4_to_8">4-8 glasses</option>
+                    <option value="more_than_8">More than 8 glasses</option>
+                </select><br>
+
+                <label for="beverages">Cups of Coffee/Tea per day:</label>
+                <select id="beverages" name="beverages">
+                    <option value="none">None</option>
+                    <option value="1_to_2">1-2 cups</option>
+                    <option value="3_to_5">3-5 cups</option>
+                    <option value="more_than_5">More than 5 cups</option>
+                </select><br>
+
+                <label for="cooking">Cooking:</label>
+                <select id="cooking" name="cooking">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <h2>Food Consumption</h2>
+                <label for="meatConsumption">Meat Consumption:</label>
+                <select id="meatConsumption" name="meatConsumption">
+                    <option value="rarely">Rarely</option>
+                    <option value="occasionally">Occasionally</option>
+                    <option value="regularly">Regularly</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="typeOfMeat">Types of Meat Consumed:</label><br>
+                <input type="checkbox" id="beef" name="beef" value="beef">
+                <label for="beef">Beef</label><br>
+                <input type="checkbox" id="pork" name="pork" value="pork">
+                <label for="pork">Pork</label><br>
+                <input type="checkbox" id="chicken" name="chicken" value="chicken">
+                <label for="chicken">Chicken</label><br>
+                <input type="checkbox" id="fish" name="fish" value="fish">
+                <label for="fish">Fish</label><br>
+
+                <label for="cerealConsumption">Cereal Consumption:</label>
+                <select id="cerealConsumption" name="cerealConsumption">
+                    <option value="rarely">Rarely</option>
+                    <option value="occasionally">Occasionally</option>
+                    <option value="regularly">Regularly</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="typeOfCereal">Types of Cereal Consumed:</label><br>
+                <input type="checkbox" id="wheat" name="wheat" value="wheat">
+                <label for="wheat">Wheat</label><br>
+                <input type="checkbox" id="rice" name="rice" value="rice">
+                <label for="rice">Rice</label><br>
+                <input type="checkbox" id="corn" name="corn" value="corn">
+                <label for="corn">Corn</label><br>
+
+                <label for="dairyConsumption">Dairy Consumption:</label>
+                <select id="dairyConsumption" name="dairyConsumption">
+                    <option value="rarely">Rarely</option>
+                    <option value="occasionally">Occasionally</option>
+                    <option value="regularly">Regularly</option>
+                    <option value="daily">Daily</option>
+                </select><br>
+
+                <label for="typeOfDairy">Types of Dairy Consumed:</label><br>
+                <input type="checkbox" id="milk" name="milk" value="milk">
+                <label for="milk">Milk</label><br>
+                <input type="checkbox" id="cheese" name="cheese" value="cheese">
+                <label for="cheese">Cheese</label><br>
+                <input type="checkbox" id="yogurt" name="yogurt" value="yogurt">
+                <label for="yogurt">Yogurt</label><br>
+        
+                <label for="vegetarianOrVeganDiet">Vegetarian or Vegan Diet:</label>
+                <select id="vegetarianOrVeganDiet" name="vegetarianOrVeganDiet">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+        
+                <label for="reasonsForDietaryChoices">Reasons for Dietary Choices:</label><br>
+                <input type="checkbox" id="health" name="health" value="health">
+                <label for="health">Health</label><br>
+                <input type="checkbox" id="environmentalImpact" name="environmentalImpact" value="environmentalImpact">
+                <label for="environmentalImpact">Environmental Impact</label><br>
+                <input type="checkbox" id="animalWelfare" name="animalWelfare" value="animalWelfare">
+                <label for="animalWelfare">Animal Welfare</label><br>
+        
+                <button type="submit">Calculate</button>
+            </form>
+        </section>
+        <section id="chart">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </section>
+    </body>
+</html>

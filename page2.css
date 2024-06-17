@@ -1,0 +1,120 @@
+*{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Chalkduster, Georgia, 'Times New Roman', Times, serif;
+    cursor: url("images/SuperCurser.png"), auto;
+}
+
+body{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+section{
+    position: relative;
+    width: 100%;
+}
+
+section .waves{
+    position: relative;
+    height: 12vh;
+}
+
+section .waves .wave{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 12vh;
+    background: url(images/wave.png);
+    background-size: 1000px 12vh;
+}
+
+section .waves .wave#wave1{
+    opacity: 1;
+    top: 0;
+    z-index: 1000;
+    animation: animate 4s linear infinite;
+}
+
+section .waves .wave#wave2{
+    opacity: 0.5;
+    top: 0;
+    z-index: 999;
+    animation: animate2 4s linear infinite;
+}
+
+section .waves .wave#wave3{
+    opacity: 0.2;
+    top: 0.75vh;
+    z-index: 998;
+    animation: animate 4s linear infinite;
+}
+
+section .waves .wave#wave4{
+    opacity: 0.7;
+    top: 1vh;
+    z-index: 999;
+    animation: animate2 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animate2{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+.topnav{
+    background-color: #3586ff;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.topnav a{
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 3vw 4vw;
+    text-decoration: none;
+    font-size: 4vw;
+}
+
+.topnav a:hover{
+    background-color: rgb(60, 120, 255);
+    padding: 2vw 4vw;
+    border-radius: 10%;
+}
+
+#waterUsageForm{
+    position: relative;
+    color: #fff;
+    font-size: 2.5vh;
+    width: 100vw;
+    height: auto;
+    padding: 1vh 4vw;
+    background-color: #3586ff;
+}
+
+#chart{
+    position: relative;
+    color: #fff;
+    height: auto;
+    padding: 1vh 4vw;
+    background-color: #3586ff;
+}

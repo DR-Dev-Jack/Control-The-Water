@@ -1,7 +1,4 @@
 window.onload = function() {
-    var currentLatitude;
-    var currentLongitude;
-
     async function getData(api_url) { // leest antwoord in en wacht voor json response
         const response = await fetch(api_url);
         const data = await response.json();
