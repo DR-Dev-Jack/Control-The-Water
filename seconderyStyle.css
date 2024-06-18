@@ -119,3 +119,14 @@ section .waves .wave#wave4{
     padding: 1vh 4vw;
     background-color: #3586ff;
 }
+
+section .text{
+    position: absolute;
+    background: #3586ff;
+    color: #fff;
+    font-size: 2.5vh;
+    width: 92vw;
+    height: auto;
+    padding: 1vh 4vw;
+    z-index: 500;
+}

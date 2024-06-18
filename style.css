@@ -139,7 +139,7 @@ h2#tittle{
 
 section .text{
     position: absolute;
-    background: rgb(53, 134, 255);
+    background: #3586ff;
     color: #fff;
     font-size: 2.5vh;
     width: 92vw;
