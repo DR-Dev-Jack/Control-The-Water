@@ -47,18 +47,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     "more_than_5": 6
                 },
                 meatConsumption: {
+                    "no": 0,
                     "rarely": 0.5,
                     "occasionally": 1,
                     "regularly": 2,
                     "daily": 7
                 },
                 cerealConsumption: {
+                    "no": 0,
                     "rarely": 0.5,
                     "occasionally": 1,
                     "regularly": 2,
                     "daily": 7
                 },
                 dairyConsumption: {
+                    "no": 0,
                     "rarely": 0.5,
                     "occasionally": 1,
                     "regularly": 2,
@@ -101,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
             drinkWater
         });
 
-        var xValues = ["Shower", "Toilet", "Dishwasher", "Laundry", "Outdoor", "Drinks"];
+        var xValues = ["Douchen", "Toilet", "Vaatwasser", "Wasmachine", "Plantjes", "Drinken"];
         var yValues = [showerWater, toiletWater, dishwasherWater, laundryWater, outdoorWater, drinkWater];
         var barColors = ["red", "green", "blue", "orange", "brown", "yellow"];
 
@@ -123,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 title: {
                     display: true,
-                    text: "Water Usage in Liters",
+                    text: "Water gebruik in Liters",
                     fontColor: '#ffffff' // Change title text color
                 },
                 scales: {
@@ -144,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Categories',
+                            labelString: 'Catogoriën',
                             fontColor: '#ffffff' // Change x-axis label color
                         }
                     }]

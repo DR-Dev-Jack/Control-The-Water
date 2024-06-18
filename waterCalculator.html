@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Control the water</title>
         <link id="favicon" rel="icon" href="images/logo.png" sizes="16x16" /> 
-        <link rel="stylesheet" href="./seconderStyle.css">
+        <link rel="stylesheet" href="./page2Style.css">
         <script src="waterUsage.js"></script>
     </head>
     
@@ -24,144 +24,160 @@
         <section>
             <div class="topnav">
                 <a href="index.html">Home</a>
-                <a href="waterCalculator.html">Water usage</a>
-                <a href="contactUs.html">Contact us</a>
+                <a href="waterCalculator.html">Water gebruik</a>
+                <a href="contactUs.html">Contact</a>
             </div>
         </section>
         <section id="waterUsageForm">
-            <h1>Water Usage Calculator</h1>
-                <label for="showerDuration">Shower Duration:</label>
+            <h1>Water Gebruik Calculator</h1>
+                <label for="showerDuration">Hoe lang douche je:</label>
                 <select id="showerDuration" name="showerDuration">
-                    <option value="less_than_5">Less than 5 minutes</option>
-                    <option value="5_to_10">5 to 10 minutes</option>
-                    <option value="10_to_15">10 to 15 minutes</option>
-                    <option value="more_than_15">More than 15 minutes</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="less_than_5">Minder dan 5 minuten</option>
+                    <option value="5_to_10">5 tot 10 minuten</option>
+                    <option value="10_to_15">10 tot 15 minuten</option>
+                    <option value="more_than_15">Meer dan 15 minuten</option>
                 </select><br>
 
-                <label for="showerFrequency">Shower Frequency:</label>
+                <label for="showerFrequency">Hoe vaak douce je:</label>
                 <select id="showerFrequency" name="showerFrequency">
-                    <option value="1_to_2">1-2 times per week</option>
-                    <option value="3_to_4">3-4 times per week</option>
-                    <option value="5_to_6">5-6 times per week</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="1_to_2">1-2 keer per week</option>
+                    <option value="3_to_4">3-4 keer per week</option>
+                    <option value="5_to_6">5-6 keer per week</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="toiletFlushes">Toilet Flushes per day:</label>
+                <label for="toiletFlushes">Hoe vaak per dag spoel je het toilet door:</label>
                 <select id="toiletFlushes" name="toiletFlushes">
-                    <option value="1_to_2">1-2 times</option>
-                    <option value="3_to_4">3-4 times</option>
-                    <option value="5_or_more">5 or more times</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="1_to_2">1-2 keer</option>
+                    <option value="3_to_4">3-4 keer</option>
+                    <option value="5_or_more">5 of meer keer</option>
                 </select><br>
 
-                <label for="dishwasherUsage">Dishwasher Usage:</label>
+                <label for="dishwasherUsage">Vaatwasser gebuik:</label>
                 <select id="dishwasherUsage" name="dishwasherUsage">
-                    <option value="rarely">Rarely</option>
-                    <option value="occasionally">Occasionally</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="rarely">Zelden</option>
+                    <option value="occasionally">Soms</option>
+                    <option value="weekly">Weekelijks</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="laundryFrequency">Laundry Frequency:</label>
+                <label for="laundryFrequency">Wassmachine gebruik:</label>
                 <select id="laundryFrequency" name="laundryFrequency">
-                    <option value="rarely">Rarely</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="2_to_3_times">2-3 times per week</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="rarely">Zelden</option>
+                    <option value="weekly">Weekelijks</option>
+                    <option value="2_to_3_times">2-3 keer per week</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="outdoorWatering">Outdoor Watering:</label>
+                <label for="outdoorWatering">Geef je de plantjes regelmatig water:</label>
                 <select id="outdoorWatering" name="outdoorWatering">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="yes">Ja</option>
+                    <option value="no">Nee</option>
                 </select><br>
 
-                <label for="drinkingWater">Glasses of Water per day:</label>
+                <label for="drinkingWater">Glazen Water per dag:</label>
                 <select id="drinkingWater" name="drinkingWater">
-                    <option value="less_than_4">Less than 4 glasses</option>
-                    <option value="4_to_8">4-8 glasses</option>
-                    <option value="more_than_8">More than 8 glasses</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="less_than_4">Minder dan 4 glazen</option>
+                    <option value="4_to_8">4-8 glazen</option>
+                    <option value="more_than_8">Meer dan 8 glazen</option>
                 </select><br>
 
-                <label for="beverages">Cups of Coffee/Tea per day:</label>
+                <label for="beverages">Kopjes koffie of thee per dag:</label>
                 <select id="beverages" name="beverages">
-                    <option value="none">None</option>
-                    <option value="1_to_2">1-2 cups</option>
-                    <option value="3_to_5">3-5 cups</option>
-                    <option value="more_than_5">More than 5 cups</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="none">Geen</option>
+                    <option value="1_to_2">1-2 kopjes</option>
+                    <option value="3_to_5">3-5 kopjes</option>
+                    <option value="more_than_5">Meer dan 5 kopjes</option>
                 </select><br>
 
-                <label for="cooking">Cooking:</label>
+                <label for="cooking">Kook je:</label>
                 <select id="cooking" name="cooking">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="yes">Ja</option>
+                    <option value="no">Nee</option>
                 </select><br>
 
-                <h2>Food Consumption</h2>
-                <label for="meatConsumption">Meat Consumption:</label>
+                <h2>Eten</h2>
+                <label for="meatConsumption">Eet je vlees:</label>
                 <select id="meatConsumption" name="meatConsumption">
-                    <option value="rarely">Rarely</option>
-                    <option value="occasionally">Occasionally</option>
-                    <option value="regularly">Regularly</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="no">Nee</option>
+                    <option value="rarely">Zelden</option>
+                    <option value="occasionally">Soms</option>
+                    <option value="regularly">Vaak</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="typeOfMeat">Types of Meat Consumed:</label><br>
+                <label for="typeOfMeat">Soorten vlees:</label><br>
                 <input type="checkbox" id="beef" name="beef" value="beef">
-                <label for="beef">Beef</label><br>
+                <label for="beef">Koe</label><br>
                 <input type="checkbox" id="pork" name="pork" value="pork">
-                <label for="pork">Pork</label><br>
+                <label for="pork">Varken</label><br>
                 <input type="checkbox" id="chicken" name="chicken" value="chicken">
-                <label for="chicken">Chicken</label><br>
+                <label for="chicken">Kip</label><br>
                 <input type="checkbox" id="fish" name="fish" value="fish">
-                <label for="fish">Fish</label><br>
+                <label for="fish">Vis</label><br>
 
-                <label for="cerealConsumption">Cereal Consumption:</label>
+                <label for="cerealConsumption">Eet je muesly:</label>
                 <select id="cerealConsumption" name="cerealConsumption">
-                    <option value="rarely">Rarely</option>
-                    <option value="occasionally">Occasionally</option>
-                    <option value="regularly">Regularly</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="no">Nee</option>
+                    <option value="rarely">Zelden</option>
+                    <option value="occasionally">Soms</option>
+                    <option value="regularly">Vaak</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="typeOfCereal">Types of Cereal Consumed:</label><br>
+                <label for="typeOfCereal">Soort muesly:</label><br>
                 <input type="checkbox" id="wheat" name="wheat" value="wheat">
-                <label for="wheat">Wheat</label><br>
+                <label for="wheat">Graan</label><br>
                 <input type="checkbox" id="rice" name="rice" value="rice">
-                <label for="rice">Rice</label><br>
+                <label for="rice">Rijst</label><br>
                 <input type="checkbox" id="corn" name="corn" value="corn">
-                <label for="corn">Corn</label><br>
+                <label for="corn">Mais</label><br>
 
-                <label for="dairyConsumption">Dairy Consumption:</label>
+                <label for="dairyConsumption">Eet of drink je zuivel:</label>
                 <select id="dairyConsumption" name="dairyConsumption">
-                    <option value="rarely">Rarely</option>
-                    <option value="occasionally">Occasionally</option>
-                    <option value="regularly">Regularly</option>
-                    <option value="daily">Daily</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="no">Nee</option>
+                    <option value="rarely">Zelden</option>
+                    <option value="occasionally">Soms</option>
+                    <option value="regularly">Vaak</option>
+                    <option value="daily">Dagenlijks</option>
                 </select><br>
 
-                <label for="typeOfDairy">Types of Dairy Consumed:</label><br>
+                <label for="typeOfDairy">Soorten zuivel:</label><br>
                 <input type="checkbox" id="milk" name="milk" value="milk">
-                <label for="milk">Milk</label><br>
+                <label for="milk">Melk</label><br>
                 <input type="checkbox" id="cheese" name="cheese" value="cheese">
-                <label for="cheese">Cheese</label><br>
+                <label for="cheese">Kaas</label><br>
                 <input type="checkbox" id="yogurt" name="yogurt" value="yogurt">
-                <label for="yogurt">Yogurt</label><br>
+                <label for="yogurt">Yoghurt</label><br>
         
-                <label for="vegetarianOrVeganDiet">Vegetarian or Vegan Diet:</label>
+                <label for="vegetarianOrVeganDiet">Vega of Vegan:</label>
                 <select id="vegetarianOrVeganDiet" name="vegetarianOrVeganDiet">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="keuze">Maak een keuze</option>
+                    <option value="yes">Ja</option>
+                    <option value="no">Nee</option>
                 </select><br>
         
-                <label for="reasonsForDietaryChoices">Reasons for Dietary Choices:</label><br>
+                <label for="reasonsForDietaryChoices">Redenen voor dieet:</label><br>
                 <input type="checkbox" id="health" name="health" value="health">
-                <label for="health">Health</label><br>
+                <label for="health">Gezondheid</label><br>
                 <input type="checkbox" id="environmentalImpact" name="environmentalImpact" value="environmentalImpact">
-                <label for="environmentalImpact">Environmental Impact</label><br>
+                <label for="environmentalImpact">Klimaat</label><br>
                 <input type="checkbox" id="animalWelfare" name="animalWelfare" value="animalWelfare">
-                <label for="animalWelfare">Animal Welfare</label><br>
+                <label for="animalWelfare">Dieren</label><br>
         
-                <button type="submit">Calculate</button>
+                <button type="submit">Berekenen</button>
             </form>
         </section>
         <section id="chart">

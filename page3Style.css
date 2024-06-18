@@ -12,6 +12,7 @@ body{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-color: black;
 }
 
 section{
@@ -101,20 +102,3 @@ section .waves .wave#wave4{
     border-radius: 10%;
 }
 
-#waterUsageForm{
-    position: relative;
-    color: #fff;
-    font-size: 2.5vh;
-    width: 100vw;
-    height: auto;
-    padding: 1vh 4vw;
-    background-color: #3586ff;
-}
-
-#chart{
-    position: relative;
-    color: #fff;
-    height: auto;
-    padding: 1vh 4vw;
-    background-color: #3586ff;
-}
