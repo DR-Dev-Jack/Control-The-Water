@@ -127,8 +127,12 @@ section .text{
     background: #3586ff;
     color: #fff;
     font-size: 2.5vh;
-    width: 92vw;
-    height: auto;
+    width: 100vw;
+    height: 68vh;
     padding: 1vh 4vw;
     z-index: 500;
+}
+
+.litle-space {
+    height: 150px;
 }
