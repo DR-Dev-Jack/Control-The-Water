@@ -89,22 +89,6 @@
                     <option value="more_than_8">Meer dan 8 glazen</option>
                 </select><br>
 
-                <label for="beverages">Kopjes koffie of thee per dag:</label>
-                <select id="beverages" name="beverages">
-                    <option value="keuze">Maak een keuze</option>
-                    <option value="none">Geen</option>
-                    <option value="1_to_2">1-2 kopjes</option>
-                    <option value="3_to_5">3-5 kopjes</option>
-                    <option value="more_than_5">Meer dan 5 kopjes</option>
-                </select><br>
-
-                <label for="cooking">Kook je:</label>
-                <select id="cooking" name="cooking">
-                    <option value="keuze">Maak een keuze</option>
-                    <option value="yes">Ja</option>
-                    <option value="no">Nee</option>
-                </select><br>
-
                 <h2>Eten</h2>
                 <label for="meatConsumption">Eet je vlees:</label>
                 <select id="meatConsumption" name="meatConsumption">
@@ -117,13 +101,13 @@
                 </select><br>
 
                 <label for="typeOfMeat">Soorten vlees:</label><br>
-                <input type="checkbox" id="beef" name="beef" value="beef">
+                <input type="checkbox" id="beef" name="meat" value="beef">
                 <label for="beef">Koe</label><br>
-                <input type="checkbox" id="pork" name="pork" value="pork">
+                <input type="checkbox" id="pork" name="meat" value="pork">
                 <label for="pork">Varken</label><br>
-                <input type="checkbox" id="chicken" name="chicken" value="chicken">
+                <input type="checkbox" id="chicken" name="meat" value="chicken">
                 <label for="chicken">Kip</label><br>
-                <input type="checkbox" id="fish" name="fish" value="fish">
+                <input type="checkbox" id="fish" name="meat" value="fish">
                 <label for="fish">Vis</label><br>
 
                 <label for="cerealConsumption">Eet je muesli:</label>
@@ -137,11 +121,11 @@
                 </select><br>
 
                 <label for="typeOfCereal">Soort muesli:</label><br>
-                <input type="checkbox" id="wheat" name="wheat" value="wheat">
+                <input type="checkbox" id="wheat" name="cereal" value="wheat">
                 <label for="wheat">Graan</label><br>
-                <input type="checkbox" id="rice" name="rice" value="rice">
+                <input type="checkbox" id="rice" name="cereal" value="rice">
                 <label for="rice">Rijst</label><br>
-                <input type="checkbox" id="corn" name="corn" value="corn">
+                <input type="checkbox" id="corn" name="cereal" value="corn">
                 <label for="corn">Mais</label><br>
 
                 <label for="dairyConsumption">Eet of drink je zuivel:</label>
@@ -155,27 +139,12 @@
                 </select><br>
 
                 <label for="typeOfDairy">Soorten zuivel:</label><br>
-                <input type="checkbox" id="milk" name="milk" value="milk">
+                <input type="checkbox" id="milk" name="dairy" value="milk">
                 <label for="milk">Melk</label><br>
-                <input type="checkbox" id="cheese" name="cheese" value="cheese">
+                <input type="checkbox" id="cheese" name="dairy" value="cheese">
                 <label for="cheese">Kaas</label><br>
-                <input type="checkbox" id="yogurt" name="yogurt" value="yogurt">
+                <input type="checkbox" id="yogurt" name="dairy" value="yogurt">
                 <label for="yogurt">Yoghurt</label><br>
-        
-                <label for="vegetarianOrVeganDiet">Vega of Vegan:</label>
-                <select id="vegetarianOrVeganDiet" name="vegetarianOrVeganDiet">
-                    <option value="keuze">Maak een keuze</option>
-                    <option value="yes">Ja</option>
-                    <option value="no">Nee</option>
-                </select><br>
-        
-                <label for="reasonsForDietaryChoices">Redenen voor dieet:</label><br>
-                <input type="checkbox" id="health" name="health" value="health">
-                <label for="health">Gezondheid</label><br>
-                <input type="checkbox" id="environmentalImpact" name="environmentalImpact" value="environmentalImpact">
-                <label for="environmentalImpact">Klimaat</label><br>
-                <input type="checkbox" id="animalWelfare" name="animalWelfare" value="animalWelfare">
-                <label for="animalWelfare">Dieren</label><br>
         
                 <button type="submit">Berekenen</button>
             </form>
@@ -183,6 +152,7 @@
         <section id="chart">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            <canvas id="mySecondChart" style="width:100%;max-width:700px"></canvas>
         </section>
     </body>
 </html>

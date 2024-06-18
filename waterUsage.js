@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     calculateButton.addEventListener("click", function(event) {
         event.preventDefault();
         
-        // Function to convert text values to numbers
         function convertToNumber(value, type) {
             const conversions = {
                 showerDuration: {
@@ -40,12 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     "4_to_8": 6,
                     "more_than_8": 10
                 },
-                beverages: {
-                    "none": 0,
-                    "1_to_2": 1.5,
-                    "3_to_5": 4,
-                    "more_than_5": 6
-                },
                 meatConsumption: {
                     "no": 0,
                     "rarely": 0.5,
@@ -70,8 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
             };
             return conversions[type][value];
         }
-        
-        // Get values from the select inputs
+
+        function getCheckboxValues(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
         const showerDuration = convertToNumber(document.getElementById("showerDuration").value, "showerDuration");
         const showerFrequency = convertToNumber(document.getElementById("showerFrequency").value, "showerFrequency");
         const toiletFlushes = convertToNumber(document.getElementById("toiletFlushes").value, "toiletFlushes");
@@ -79,14 +76,33 @@ document.addEventListener("DOMContentLoaded", function() {
         const laundryFrequency = convertToNumber(document.getElementById("laundryFrequency").value, "laundryFrequency");
         const outdoorWatering = document.getElementById("outdoorWatering").value === "yes" ? 1 : 0;
         const drinkingWater = convertToNumber(document.getElementById("drinkingWater").value, "drinkingWater");
-        const beverages = convertToNumber(document.getElementById("beverages").value, "beverages");
-        const cooking = document.getElementById("cooking").value === "yes" ? 1 : 0;
         const meatConsumption = convertToNumber(document.getElementById("meatConsumption").value, "meatConsumption");
         const cerealConsumption = convertToNumber(document.getElementById("cerealConsumption").value, "cerealConsumption");
         const dairyConsumption = convertToNumber(document.getElementById("dairyConsumption").value, "dairyConsumption");
-        const vegetarianOrVeganDiet = document.getElementById("vegetarianOrVeganDiet").value === "yes" ? 1 : 0;
-        
-        // Calculate water usage
+
+        const meatTypes = getCheckboxValues("meat");
+        const cerealTypes = getCheckboxValues("cereal");
+        const dairyTypes = getCheckboxValues("dairy");
+
+        const waterUsagePerType = {
+            meat: {
+                beef: 1000,
+                pork: 500,
+                chicken: 250,
+                fish: 100
+            },
+            cereal: {
+                wheat: 500,
+                rice: 600,
+                corn: 400
+            },
+            dairy: {
+                milk: 400,
+                cheese: 500,
+                yogurt: 300
+            }
+        };
+
         const showerWater = showerDuration * showerFrequency * 6;
         const toiletWater = toiletFlushes * 7;
         const dishwasherWater = dishwasherUsage * 10;
@@ -94,19 +110,31 @@ document.addEventListener("DOMContentLoaded", function() {
         const outdoorWater = outdoorWatering * 20;
         const drinkWater = drinkingWater * 0.25;
 
-        // Print values to the console
+        const averageWaterUsage = (types, usagePerType) => {
+            if (types.length === 0) return 0;
+            const total = types.reduce((sum, type) => sum + usagePerType[type], 0);
+            return total / types.length;
+        };
+
+        const meatWater = meatConsumption * averageWaterUsage(meatTypes, waterUsagePerType.meat);
+        const cerealWater = cerealConsumption * averageWaterUsage(cerealTypes, waterUsagePerType.cereal);
+        const dairyWater = dairyConsumption * averageWaterUsage(dairyTypes, waterUsagePerType.dairy);
+
         console.log({
             showerWater,
             toiletWater,
             dishwasherWater,
             laundryWater,
             outdoorWater,
-            drinkWater
+            drinkWater,
+            meatWater,
+            cerealWater,
+            dairyWater
         });
 
         var xValues = ["Douchen", "Toilet", "Vaatwasser", "Wasmachine", "Plantjes", "Drinken"];
         var yValues = [showerWater, toiletWater, dishwasherWater, laundryWater, outdoorWater, drinkWater];
-        var barColors = ["red", "green", "blue", "orange", "brown", "yellow"];
+        var barColors = ["red", "green", "blue", "orange", "brown", "purple"];
 
         new Chart("myChart", {
             type: "bar",
@@ -121,34 +149,85 @@ document.addEventListener("DOMContentLoaded", function() {
                 legend: { 
                     display: false,
                     labels: {
-                        fontColor: '#ffffff' // Change legend text color
+                        fontColor: '#ffffff'
                     }
                 },
                 title: {
                     display: true,
-                    text: "Water gebruik in Liters",
-                    fontColor: '#ffffff' // Change title text color
+                    text: "Water gebruik in Liters per week",
+                    fontColor: '#ffffff'
                 },
                 scales: {
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            fontColor: '#ffffff' // Change y-axis text color
+                            fontColor: '#ffffff'
                         },
                         scaleLabel: {
                             display: true,
                             labelString: 'Liters',
-                            fontColor: '#ffffff' // Change y-axis label color
+                            fontColor: '#ffffff'
                         }
                     }],
                     xAxes: [{
                         ticks: {
-                            fontColor: '#ffffff' // Change x-axis text color
+                            fontColor: '#ffffff'
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Catogoriën',
-                            fontColor: '#ffffff' // Change x-axis label color
+                            labelString: 'Categorieën',
+                            fontColor: '#ffffff'
+                        }
+                    }]
+                }
+            }
+        })
+
+        var xValues = ["Vlees", "Granen", "Zuivel"];
+        var yValues = [meatWater, cerealWater, dairyWater];
+        var barColors = ["magenta", "lime", "pink"];
+
+        new Chart("mySecondChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { 
+                    display: false,
+                    labels: {
+                        fontColor: '#ffffff'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: "Water gebruik in Liters per week",
+                    fontColor: '#ffffff'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: '#ffffff'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Liters',
+                            fontColor: '#ffffff'
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: '#ffffff'
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Categorieën',
+                            fontColor: '#ffffff'
                         }
                     }]
                 }
