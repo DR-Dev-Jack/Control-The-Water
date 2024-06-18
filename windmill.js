@@ -1,5 +1,6 @@
 let rotationSpeed;
 let rotation;
+
 function setup() {
     let canvas = createCanvas(340, 390);
     canvas.parent('windmill-container');
@@ -8,13 +9,13 @@ function setup() {
 
 function draw() {
     clear();
-    
+
     console.log(max_wind)
-    if (max_wind === undefined){
-        rotationSpeed = 2
-    } else[
-        rotationSpeed = max_wind * 0.1
-    ]
+    if (typeof max_wind === 'undefined'){
+        rotationSpeed = 2;
+    } else {
+        rotationSpeed = max_wind * 0.005
+    }
 
     stroke(255, 255, 255);
     fill(255, 255, 255);

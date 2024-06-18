@@ -1,4 +1,5 @@
 var max_wind;
+
 window.onload = function() {
     async function getData(api_url) { // leest antwoord in en wacht voor json response
         const response = await fetch(api_url);
@@ -19,7 +20,7 @@ window.onload = function() {
         const avgTemp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["avgtemp_c"];
         const rain_chance = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["daily_chance_of_rain"];
         const max_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxtemp_c"];
-        var max_wind = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxwind_kph"];
+        max_wind = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["maxwind_kph"];
         const min_temp = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["mintemp_c"];
         const rain = jsonWeatherReply["forecast"]["forecastday"][0]["day"]["totalprecip_mm"];
 
