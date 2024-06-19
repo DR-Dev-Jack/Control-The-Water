@@ -1,11 +1,15 @@
 let rotationSpeed;
 let rotation;
 
+// maakt het canvas
+
 function setup() {
     let canvas = createCanvas(340, 390);
     canvas.parent('windmill-container');
     rotation = 0;
 }
+
+//maakt de windmolen
 
 function draw() {
     clear();

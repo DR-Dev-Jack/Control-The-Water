@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var xValues = ["Vlees", "Granen", "Zuivel"];
         var yValues = [meatWater, cerealWater, dairyWater];
-        var barColors = ["magenta", "lime", "pink"];
+        var barColors = ["darkred", "green", "blue"];
 
         new Chart("mySecondChart", {
             type: "bar",
