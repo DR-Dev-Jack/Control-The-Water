@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var xValues = ["Douchen", "Toilet", "Vaatwasser", "Wasmachine", "Plantjes", "Drinken"];
         var yValues = [showerWater, toiletWater, dishwasherWater, laundryWater, outdoorWater, drinkWater];
-        var barColors = ["red", "green", "blue", "orange", "brown", "purple"];
+        var barColors = ["darkred", "green", "blue", "orange", "brown", "purple"];
 
         new Chart("myChart", {
             type: "bar",
